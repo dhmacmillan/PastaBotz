@@ -11,6 +11,7 @@ public class pastaBotz {
     public pastaBotzMotor leftBackMotor;
     public pastaBotzMotor rightFrontMotor;
     public pastaBotzMotor rightBackMotor;
+    public pastaBotzDriveTrain driveTrain;
 
     public pastaBotzGyro gyro;
 
@@ -22,8 +23,10 @@ public class pastaBotz {
         rightBackMotor = new pastaBotzMotor(hardware.rightBackMotor, MotorType.RevHDHex);
         leftFrontMotor = new pastaBotzMotor(hardware.leftFrontMotor, MotorType.RevHDHex);
         leftBackMotor = new pastaBotzMotor(hardware.leftBackMotor, MotorType.RevHDHex);
-        
+
         gyro = new pastaBotzGyro(hardware.gyro);
+
+        driveTrain = new pastaBotzDriveTrain(leftFrontMotor, rightFrontMotor, gyro, telemetry);
     }
 
 }
